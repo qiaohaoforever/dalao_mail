@@ -72,4 +72,4 @@ if __name__=='__main__':
         tables[csv_list] = list(reader)
     template = env.get_template('template.html')
     content = template.render(day=yesterday, data0=tables['b'], data1=tables['c'])
-    sendMail(all_list, subject, content, attach_lists)
+    sendMail(me, subject, content, attach_lists)
