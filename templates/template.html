@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style type="text/css">
+        html { 
+            font-family:Microsoft YaHei 
+        }
+        span{
+                font-size: 14px;
+                color: #999;
+        }
+        .footer{
+                border-top: 1px solid #999;
+        }
+        /* Table Head */
+        #table-7 thead th {
+        background-color: rgb(81, 130, 187);
+        color: #fff;
+        border-bottom-width: 0;
+        }
+
+        /* Column Style */
+        #table-7 td {
+        color: #000;
+        }
+        /* Heading and Column Style */
+        #table-7 tr, #table-7 th {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(81, 130, 187);
+        }
+
+        /* Padding and font style */
+        #table-7 th {
+        padding: 5px 10px;
+        font-size: 12px;
+        font-family: Verdana;
+        font-weight: bold;
+        }
+        #table-7 td{
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        span{
+        font-size: 14px;
+        color: #999;
+		}
+		.footer{
+			border-top: 1px solid #999;
+		}
+    </style>
+</head>
+<body>
+        <p><b>dalao好：</b></p>
+        <br>
+	<p><b>{{ day }} bbb数据如下：</b></p> 
+        <table id="table-7" border="1"; cellspacing="0"; cellpadding="0";>
+            <thead>
+                <tr>
+                    {% for heading in data0[0] %}
+                    <th>{{heading}}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data0[1:] %}
+                <tr>
+                    {% for cell in row %}
+                        {% if loop.index <=2 %}
+                            <td style="text-align: left;">{{cell}}</td>
+                        {% else %}
+                            <td style="text-align: right;">{{cell}}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <ul>
+            <li>上表第一行为表头，前两列靠左，其余几列靠右。</li>
+        </ul>
+        <br>
+	<p><b>ccc数据如下：</b></p>
+        <table id="table-7" border="1"; cellspacing="0"; cellpadding="0";>
+                <thead>
+                    <tr>
+                        {% for heading in data1[0] %}
+                        <th>{{heading}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data1[1:] %}
+                    <tr>
+                        {% for cell in row %}
+                            {% if loop.index == 1%}
+                                <td style="text-align: left;">{{cell}}</td>
+                            {% else %}
+                                <td style="text-align: right;">{{cell}}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+        <ul>
+           <li>上表第一行为表头，第一列靠左，其余几列靠右；</li>
+           <li>备注备注备注。</li>
+        </ul>
+    <br><br><br>
+	<p class="footer">
+		<span>
+        保密警告！保密警告！保密警告！保密警告！
+        </span>
+	</p>
+</body>
+</html>
+
