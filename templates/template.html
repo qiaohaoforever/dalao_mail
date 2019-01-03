@@ -50,6 +50,20 @@
 		.footer{
 			border-top: 1px solid #999;
 		}
+        div {
+        width: 400px;
+        height: 400px;
+        border: 1px solid #000;
+        }
+       img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        margin-left: auto;
+        margin-right:auto;
+        display:block;
+        }
     </style>
 </head>
 <body>
@@ -59,13 +73,13 @@
         <table id="table-7" border="1"; cellspacing="0"; cellpadding="0";>
             <thead>
                 <tr>
-                    {% for heading in data0[0] %}
+                    {% for heading in data['b'][0] %}
                     <th>{{heading}}</th>
                     {% endfor %}
                 </tr>
             </thead>
             <tbody>
-                {% for row in data0[1:] %}
+                {% for row in data['b'][1:] %}
                 <tr>
                     {% for cell in row %}
                         {% if loop.index <=2 %}
@@ -86,13 +100,13 @@
         <table id="table-7" border="1"; cellspacing="0"; cellpadding="0";>
                 <thead>
                     <tr>
-                        {% for heading in data1[0] %}
+                        {% for heading in data['c'][0] %}
                         <th>{{heading}}</th>
                         {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
-                    {% for row in data1[1:] %}
+                    {% for row in data['c'][1:] %}
                     <tr>
                         {% for cell in row %}
                             {% if loop.index == 1%}
@@ -109,6 +123,9 @@
            <li>上表第一行为表头，第一列靠左，其余几列靠右；</li>
            <li>备注备注备注。</li>
         </ul>
+        <br>
+        <p><b>图片{{ pic }}：</b></p>
+        <p><img src="cid:{{ pic }}" width="50%" /></p>
     <br><br><br>
 	<p class="footer">
 		<span>
